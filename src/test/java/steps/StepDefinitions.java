@@ -76,10 +76,11 @@ public class StepDefinitions {
         hotstarPage.getSelectreality().click();
         Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
 
+
     }
 
     @When("the user search the channel name")
-    public void the_user_search_the_channel_name()  {
+    public void the_user_search_the_channel_name() {
 
         WebElement element = hotstarPage.getSearchPage();
         Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
@@ -105,7 +106,8 @@ public class StepDefinitions {
 
     }
     @When("the user select the Maharastra Vedio")
-    public void the_user_select_the_maharastra_vedio()  {
+    public void the_user_select_the_maharastra_vedio() {
+
 
         hotstarPage.getSelectVedio().click();
         Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
@@ -114,6 +116,7 @@ public class StepDefinitions {
     @Then("the Maharastra vedio results should be played")
     public void the_maharastra_vedio_results_should_be_played()  {
 
+
         hotstarPage.getSelectTeaserVedio().click();
         WebElement DisplayHotstarPage = hotstarPage.getDisplayHotstarPage();
         Assert.assertTrue(DisplayHotstarPage.isDisplayed());
@@ -121,7 +124,7 @@ public class StepDefinitions {
     }
 
     @Given("User navigates to the sport page")
-    public void user_navigates_to_the_sport_page() {
+    public void user_navigates_to_the_sport_page()  {
 
         hotstarPage.getSelectsport().click();
         Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
@@ -129,6 +132,7 @@ public class StepDefinitions {
     }
     @When("User able to {string} the  vedio")
     public void user_able_to_the_vedio(String search)  {
+
         Wait wait1 = new FluentWait(driver)
                 .withTimeout(10, TimeUnit.SECONDS)
                 .pollingEvery(2, TimeUnit.SECONDS)
@@ -136,11 +140,12 @@ public class StepDefinitions {
         WebElement Input=hotstarPage.getSearchvedio();
         Input.sendKeys(search);
 
+
     }
     @And("User can click on enter")
     public void user_can_click_on_enter()  {
 
-          hotstarPage.getSearchvedio().sendKeys(Keys.ENTER);
+        hotstarPage.getSearchvedio().sendKeys(Keys.ENTER);
 
     }
     @Then("User redirected to the relavent page")
@@ -152,14 +157,15 @@ public class StepDefinitions {
 
 
     @Given("User navigates to the AnimalsandNature channel")
-    public void user_navigates_to_the_animalsand_nature_channel()  {
+    public void user_navigates_to_the_animalsand_nature_channel() {
 
         hotstarPage.getSelectAnimalsAndNature().click();
         Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
 
     }
     @When("User able to select teaser vedio")
-    public void user_able_to_select_teaser_vedio()  {
+    public void user_able_to_select_teaser_vedio() {
+
 
         hotstarPage.getSelectBornInAfrica().click();
         Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
@@ -167,6 +173,7 @@ public class StepDefinitions {
     }
     @Then("the teaser vedio should be played")
     public void the_teaser_vedio_should_be_played()  {
+
 
         hotstarPage.getSelectBornInAfricaTeaser().click();
         WebElement DisplayHotstarPage = hotstarPage.getDisplayHotstarPage();
