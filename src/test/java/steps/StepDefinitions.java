@@ -37,38 +37,33 @@ public class StepDefinitions {
         this.scenario = scenario;
     }
     @Given("User is select channel")
-    public void userIsSelectChannel() throws InterruptedException{
-        Thread.sleep(1000);
+    public void userIsSelectChannel() {
+
         url = HotstarProps.getValue("url");
         driver.get(url);
-        Thread.sleep(2000);
         hotstarPage = new HotstarPage(driver);
         hotstarPage.getSelectIcon().click();
-        Thread.sleep(2000);
         hotstarPage.getSelectGenres().click();
-        Thread.sleep(2000);
+
     }
 
     @Given("the user navigates to the drama channel")
-    public void the_user_navigates_to_the_drama_channel() throws InterruptedException{
+    public void the_user_navigates_to_the_drama_channel() {
 
-       Thread.sleep(2000);
-       hotstarPage.getSelectdrama().click();
+        hotstarPage.getSelectdrama().click();
        Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
-       Thread.sleep(2000);
+
 
     }
     @When("the user select the Guppendentha Manasu serial")
-    public void the_user_select_the_Guppendentha_Manasu_serial() throws InterruptedException {
+    public void the_user_select_the_Guppendentha_Manasu_serial() {
 
-        Thread.sleep(2000);
         hotstarPage.getSelectGuppendanthaManasu().click();
-        Thread.sleep(2000);
-
+        Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
 
     }
     @Then("the Guppendentha Manasu serial results should be displayed")
-    public void the_Guppendentha_Manasu_serial_results_should_be_displayed() throws InterruptedException {
+    public void the_Guppendentha_Manasu_serial_results_should_be_displayed()  {
 
         WebElement DisplayHotstarPage = hotstarPage.getDisplayHotstarPage();
         Assert.assertTrue(DisplayHotstarPage.isDisplayed());
@@ -76,92 +71,77 @@ public class StepDefinitions {
     }
 
     @Given("the user navigates to the reality channel")
-    public void the_user_navigates_to_the_reality_channel() throws InterruptedException {
+    public void the_user_navigates_to_the_reality_channel()  {
 
-        Thread.sleep(2000);
         hotstarPage.getSelectreality().click();
-        Thread.sleep(2000);
         Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
-
 
     }
 
     @When("the user search the channel name")
-    public void the_user_search_the_channel_name() throws InterruptedException {
+    public void the_user_search_the_channel_name()  {
+
         WebElement element = hotstarPage.getSearchPage();
-        Thread.sleep(2000);
         Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
-        Thread.sleep(2000);
         data = TestDataReader.getData(scenario.getName());
         element.sendKeys(data.get("Search_Type"));
-        Thread.sleep(2000);
         element.sendKeys(Keys.ENTER);
 
     }
 
     @Then("the search channel results should be displayed")
-    public void the_search_channel_results_should_be_displayed() throws InterruptedException {
+    public void the_search_channel_results_should_be_displayed()  {
 
-        Thread.sleep(2000);
         String text = hotstarPage.getNotFoundPage().getText();
         Assert.assertEquals(text,data.get("Expected_Result"));
 
     }
 
     @Given("the user navigates to the travel channel")
-    public void the_user_navigates_to_the_travel_channel() throws InterruptedException {
+    public void the_user_navigates_to_the_travel_channel()  {
 
-        Thread.sleep(2000);
         hotstarPage.getSelecttravel().click();
-        Thread.sleep(2000);
         Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
+
     }
     @When("the user select the Maharastra Vedio")
-    public void the_user_select_the_maharastra_vedio() throws InterruptedException {
+    public void the_user_select_the_maharastra_vedio()  {
 
-        Thread.sleep(2000);
         hotstarPage.getSelectVedio().click();
-        Thread.sleep(2000);
         Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
 
     }
     @Then("the Maharastra vedio results should be played")
-    public void the_maharastra_vedio_results_should_be_played() throws InterruptedException {
+    public void the_maharastra_vedio_results_should_be_played()  {
 
-        Thread.sleep(2000);
         hotstarPage.getSelectTeaserVedio().click();
-        Thread.sleep(60000);
         WebElement DisplayHotstarPage = hotstarPage.getDisplayHotstarPage();
         Assert.assertTrue(DisplayHotstarPage.isDisplayed());
 
     }
 
     @Given("User navigates to the sport page")
-    public void user_navigates_to_the_sport_page() throws InterruptedException {
+    public void user_navigates_to_the_sport_page() {
 
-        Thread.sleep(2000);
         hotstarPage.getSelectsport().click();
-        Thread.sleep(2000);
         Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
 
     }
     @When("User able to {string} the  vedio")
-    public void user_able_to_the_vedio(String search) throws InterruptedException {
+    public void user_able_to_the_vedio(String search)  {
         Wait wait1 = new FluentWait(driver)
                 .withTimeout(10, TimeUnit.SECONDS)
                 .pollingEvery(2, TimeUnit.SECONDS)
                 .ignoring(Exception.class);
-        Thread.sleep(2000);
         WebElement Input=hotstarPage.getSearchvedio();
-        Thread.sleep(2000);
         Input.sendKeys(search);
-        Thread.sleep(2000);
+
     }
     @And("User can click on enter")
-    public void user_can_click_on_enter() throws InterruptedException {
-          Thread.sleep(2000);
+    public void user_can_click_on_enter()  {
+
           hotstarPage.getSearchvedio().sendKeys(Keys.ENTER);
-          Thread.sleep(2000);
+
     }
     @Then("User redirected to the relavent page")
     public void user_redirected_to_the_relavent_page() {
@@ -172,27 +152,23 @@ public class StepDefinitions {
 
 
     @Given("User navigates to the AnimalsandNature channel")
-    public void user_navigates_to_the_animalsand_nature_channel() throws InterruptedException {
-        Thread.sleep(2000);
+    public void user_navigates_to_the_animalsand_nature_channel()  {
+
         hotstarPage.getSelectAnimalsAndNature().click();
-        Thread.sleep(2000);
         Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
+
     }
     @When("User able to select teaser vedio")
-    public void user_able_to_select_teaser_vedio() throws InterruptedException {
+    public void user_able_to_select_teaser_vedio()  {
 
-        Thread.sleep(2000);
         hotstarPage.getSelectBornInAfrica().click();
-        Thread.sleep(2000);
         Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
 
     }
     @Then("the teaser vedio should be played")
-    public void the_teaser_vedio_should_be_played() throws InterruptedException {
+    public void the_teaser_vedio_should_be_played()  {
 
-        Thread.sleep(2000);
         hotstarPage.getSelectBornInAfricaTeaser().click();
-        Thread.sleep(30000);
         WebElement DisplayHotstarPage = hotstarPage.getDisplayHotstarPage();
         Assert.assertTrue(DisplayHotstarPage.isDisplayed());
 
