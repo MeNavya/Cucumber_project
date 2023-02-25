@@ -1,5 +1,6 @@
 package pages;
 
+import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,136 +15,79 @@ public class HotstarPage {
         }
 
         @FindBy(xpath = "//div[@class=\"icon-wrapper\"]")
-        private WebElement SelectIcon;
-
-        public WebElement getSelectIcon() {
-            return SelectIcon;
-        }
-
-        public WebElement getDisplayHotstarPage() {
-            return DisplayHotstarPage;
-        }
+        @Getter
+        WebElement SelectIcon;
 
         @FindBy(xpath = "//div[@class=\"master-container-inner\"]")
-        private WebElement DisplayHotstarPage;
+        @Getter
+        WebElement DisplayHotstarPage;
 
         @FindBy(xpath = "//a[@href=\"/in/genres\"]")
-        private  WebElement SelectGenres;
-
-        public WebElement getSelectGenres() {
-            return SelectGenres;
-        }
+        @Getter
+        WebElement SelectGenres;
 
         @FindBy(xpath = "//a[@href=\"/in/genres/drama\"]")
-        private  WebElement Selectdrama;
-
-        public WebElement getSelectdrama() {
-            return Selectdrama;
-        }
+        @Getter
+        WebElement Selectdrama;
 
         @FindBy(xpath = "//a[@href=\"/in/tv/guppedantha-manasu/1260049160\"]")
-        private  WebElement SelectGuppendanthaManasu;
-
-        public WebElement getSelectGuppendanthaManasu() {
-            return SelectGuppendanthaManasu;
-        }
+        @Getter
+        WebElement SelectGuppendanthaManasu;
 
         @FindBy(xpath = "//div[@class=\"master-container-inner\"]")
-        private WebElement SerialHotstarPage;
-
-        public WebElement getSerialHotstarPage(){
-            return SerialHotstarPage;
-        }
+        @Getter
+        WebElement SerialHotstarPage;
 
         @FindBy(xpath = "//a[@href=\"/in/genres/reality\"]")
-        private WebElement Selectreality;
-
-        public WebElement getSelectreality(){
-            return Selectreality;
-        }
+        @Getter
+        WebElement Selectreality;
 
         @FindBy(xpath = "//a[@href=\"/in/genres/travel\"]")
-        private  WebElement Selecttravel;
-
-        public WebElement getSelecttravel() {
-            return Selecttravel;
-        }
-
+        @Getter
+        WebElement Selecttravel;
 
         @FindBy(xpath = "//a[@href=\"/in/tv/postcards-from-maharashtra/1260127328\"]")
-        private  WebElement SelectVedio;
-
-        public WebElement getSelectVedio() {
-            return SelectVedio;
-        }
+        @Getter
+        WebElement SelectVedio;
 
         @FindBy(xpath = "//a[@href=\"/in/postcards-from-maharashtra-teaser-3/1260129363\"]")
-        private  WebElement SelectTeaserVedio;
-
-        public WebElement getSelectTeaserVedio() {
-            return SelectTeaserVedio;
-        }
+        @Getter
+        WebElement SelectTeaserVedio;
 
         @FindBy(xpath = "//a[@href=\"/in/genres/sport\"]")
-        private  WebElement Selectsport;
-
-        public WebElement getSelectsport() {
-            return Selectsport;
-        }
+        @Getter
+        WebElement Selectsport;
 
         @FindBy(xpath = "//a[@href=\"/in/movies/liger-saala-crossbreed/1260115642\"]")
-        private  WebElement SelectLiger;
-
-        public WebElement getSelectLiger() {
-            return SelectLiger;
-        }
+        @Getter
+        WebElement SelectLiger;
 
         @FindBy(xpath = "//div[@class=\"play-icon pulsateIcon\"]")
-        private WebElement SelecetLigerTrailer;
-
-        public WebElement getSelecetLigerTrailer() {
-            return SelecetLigerTrailer;
-        }
+        @Getter
+        WebElement SelecetLigerTrailer;
 
         @FindBy(xpath = "//a[@href=\"/in/genres/animals-&-nature\"]")
-        private  WebElement SelectAnimalsAndNature;
-
-        public WebElement getSelectAnimalsAndNature() {
-            return SelectAnimalsAndNature;
-        }
+        @Getter
+        WebElement SelectAnimalsAndNature;
 
         @FindBy(xpath = "//a[@href=\"/in/tv/born-in-africa/1260008308\"]")
-        private  WebElement SelectBornInAfrica;
-
-        public WebElement getSelectBornInAfrica() {
-            return SelectBornInAfrica;
-        }
-
-        public WebElement getSearchPage() {
-            return SearchPage;
-        }
+        @Getter
+        WebElement SelectBornInAfrica;
 
         @FindBy(id = "searchField")
-        private WebElement SearchPage;
+        @Getter
+        WebElement SearchPage;
 
-    public WebElement getSearchvedio() {
-        return Searchvedio;
-    }
-
-    @FindBy(id = "searchField")
-        private WebElement Searchvedio;
+        @FindBy(id = "searchField")
+        @Getter
+        WebElement Searchvedio;
 
         @FindBy(xpath = "//a[@href=\"/in/born-in-africa-teaser/1000239442\"]")
-        private  WebElement SelectBornInAfricaTeaser;
-
-        public WebElement getSelectBornInAfricaTeaser() {
-            return SelectBornInAfricaTeaser;
-        }
+        @Getter
+        WebElement SelectBornInAfricaTeaser;
 
         @FindBy(xpath = "//h3[@class=\"title\"]")
-        private WebElement NotFoundPage;
+        @Getter
+        WebElement NotFoundPage;
 
-        public WebElement getNotFoundPage() {
-            return NotFoundPage;
-        }
 }
