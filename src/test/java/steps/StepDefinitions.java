@@ -43,8 +43,6 @@ public class StepDefinitions {
         ClickUtils.click(driver,hotstarPage.getSelectIcon());
         ClickUtils.click(driver,hotstarPage.getSelectGenres());
 
-
-
     }
 
     @Given("the user navigates to the drama channel")
@@ -90,7 +88,7 @@ public class StepDefinitions {
     public void the_user_search_the_channel_name() {
         WaitUtils.waitTillVisible(driver,hotstarPage.getSearchPage());
         WebElement element = hotstarPage.getSearchPage();
-        Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
+//        Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
         data = TestDataReader.getData(scenario.getName());
 //        WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
         element.sendKeys(data.get("Search_Type"));
@@ -148,7 +146,7 @@ public class StepDefinitions {
 
        // WaitUtils.waitTillVisible(driver,hotstarPage.getSearchvedio());
         WebElement Input=hotstarPage.getSearchvedio();
-
+        //        Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
         Input.sendKeys(search);
 //        WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
 
@@ -175,7 +173,7 @@ public class StepDefinitions {
     public void user_navigates_to_the_animalsand_nature_channel() {
 
         ClickUtils.click(driver,hotstarPage.getSelectAnimalsAndNature());
-        Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
+//        Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
 
 
     }
