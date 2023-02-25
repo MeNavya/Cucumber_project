@@ -146,7 +146,7 @@ public class StepDefinitions {
 
        // WaitUtils.waitTillVisible(driver,hotstarPage.getSearchvedio());
         WebElement Input=hotstarPage.getSearchvedio();
-        //        Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
+        WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
         Input.sendKeys(search);
 //        WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
 
@@ -160,7 +160,7 @@ public class StepDefinitions {
     }
     @Then("User redirected to the relavent page")
     public void user_redirected_to_the_relavent_page() {
-        WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
+        //WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
         WebElement DisplayHotstarPage = hotstarPage.getDisplayHotstarPage();
         Assert.assertTrue(DisplayHotstarPage.isDisplayed());
 //        WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
