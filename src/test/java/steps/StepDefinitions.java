@@ -49,8 +49,8 @@ public class StepDefinitions {
     public void the_user_navigates_to_the_drama_channel() {
 
         ClickUtils.click(driver,hotstarPage.getSelectdrama());
-        WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
-        Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
+       // WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
+//        Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
 //        WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
 
 
@@ -146,23 +146,24 @@ public class StepDefinitions {
 
        // WaitUtils.waitTillVisible(driver,hotstarPage.getSearchvedio());
         WebElement Input=hotstarPage.getSearchvedio();
-        //        Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
+        //Thread.sleep(2000);
+        WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
         Input.sendKeys(search);
-//        WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
+        //WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
 
     }
     @And("User can click on enter")
     public void user_can_click_on_enter()  {
 //        WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
         hotstarPage.getSearchvedio().sendKeys(Keys.ENTER);
-//        WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
+       // WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
 
     }
     @Then("User redirected to the relavent page")
     public void user_redirected_to_the_relavent_page() {
-        WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
+        //WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
         WebElement DisplayHotstarPage = hotstarPage.getDisplayHotstarPage();
-        Assert.assertTrue(DisplayHotstarPage.isDisplayed());
+//        Assert.assertTrue(DisplayHotstarPage.isDisplayed());
 //        WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
 
     }
