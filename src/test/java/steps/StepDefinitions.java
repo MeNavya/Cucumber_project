@@ -49,27 +49,22 @@ public class StepDefinitions {
     public void the_user_navigates_to_the_drama_channel() {
 
         ClickUtils.click(driver,hotstarPage.getSelectdrama());
-       // WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
-//        Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
-//        WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
-
 
     }
+
     @When("the user select the Guppendentha Manasu serial")
     public void the_user_select_the_Guppendentha_Manasu_serial() {
 
         ClickUtils.click(driver,hotstarPage.getSelectGuppendanthaManasu());
         WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
-        //Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
-//        WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
 
     }
+
     @Then("the Guppendentha Manasu serial results should be displayed")
     public void the_Guppendentha_Manasu_serial_results_should_be_displayed()  {
-      //  WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
+
         WebElement DisplayHotstarPage = hotstarPage.getDisplayHotstarPage();
         Assert.assertTrue(DisplayHotstarPage.isDisplayed());
-
 
     }
 
@@ -77,33 +72,25 @@ public class StepDefinitions {
     public void the_user_navigates_to_the_reality_channel()  {
 
         ClickUtils.click(driver,hotstarPage.getSelectreality());
-       // WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
-        //Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
-
-
 
     }
 
     @When("the user search the channel name")
     public void the_user_search_the_channel_name() {
+
         WaitUtils.waitTillVisible(driver,hotstarPage.getSearchPage());
         WebElement element = hotstarPage.getSearchPage();
-//        Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
         data = TestDataReader.getData(scenario.getName());
-//        WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
         element.sendKeys(data.get("Search_Type"));
-//        WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
         element.sendKeys(Keys.ENTER);
 
     }
 
     @Then("the search channel results should be displayed")
     public void the_search_channel_results_should_be_displayed()  {
-        WaitUtils.waitTillVisible(driver,hotstarPage.getNotFoundPage());
+
         String text = hotstarPage.getNotFoundPage().getText();
-//        WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
         Assert.assertEquals(text,data.get("Expected_Result"));
-//        WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
 
     }
 
@@ -111,24 +98,22 @@ public class StepDefinitions {
     public void the_user_navigates_to_the_travel_channel()  {
 
         ClickUtils.click(driver,hotstarPage.getSelecttravel());
-       // Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
-
 
     }
+
     @When("the user select the Maharastra Vedio")
     public void the_user_select_the_maharastra_vedio() {
 
         ClickUtils.click(driver,hotstarPage.getSelectVedio());
-        //Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
 
     }
+
     @Then("the Maharastra vedio results should be played")
     public void the_maharastra_vedio_results_should_be_played()  {
 
         ClickUtils.click(driver,hotstarPage.getSelectTeaserVedio());
         WebElement DisplayHotstarPage = hotstarPage.getDisplayHotstarPage();
         Assert.assertTrue(DisplayHotstarPage.isDisplayed());
-//        WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
 
     }
 
@@ -136,35 +121,29 @@ public class StepDefinitions {
     public void user_navigates_to_the_sport_page()  {
 
         ClickUtils.click(driver,hotstarPage.getSelectsport());
-  //     WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
-       // Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
-
 
     }
+
     @When("User able to {string} the  vedio")
     public void user_able_to_the_vedio(String search)  {
 
-       // WaitUtils.waitTillVisible(driver,hotstarPage.getSearchvedio());
         WebElement Input=hotstarPage.getSearchvedio();
-        //Thread.sleep(2000);
         WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
         Input.sendKeys(search);
-        //WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
 
     }
+
     @And("User can click on enter")
     public void user_can_click_on_enter()  {
-//        WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
+
         hotstarPage.getSearchvedio().sendKeys(Keys.ENTER);
-       // WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
 
     }
+
     @Then("User redirected to the relavent page")
     public void user_redirected_to_the_relavent_page() {
-        //WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
+
         WebElement DisplayHotstarPage = hotstarPage.getDisplayHotstarPage();
-//        Assert.assertTrue(DisplayHotstarPage.isDisplayed());
-//        WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
 
     }
 
@@ -174,16 +153,15 @@ public class StepDefinitions {
     public void user_navigates_to_the_animalsand_nature_channel() {
 
         ClickUtils.click(driver,hotstarPage.getSelectAnimalsAndNature());
-//        Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
-
 
     }
+
     @When("User able to select teaser vedio")
     public void user_able_to_select_teaser_vedio() {
 
         ClickUtils.click(driver,hotstarPage.getSelectBornInAfrica());
         Assert.assertTrue(hotstarPage.getDisplayHotstarPage().isDisplayed());
-//        WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
+
 
     }
     @Then("the teaser vedio should be played")
@@ -191,7 +169,6 @@ public class StepDefinitions {
 
         ClickUtils.click(driver,hotstarPage.getSelectBornInAfricaTeaser());
         WebElement DisplayHotstarPage = hotstarPage.getDisplayHotstarPage();
-//        WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
         Assert.assertTrue(DisplayHotstarPage.isDisplayed());
 
     }
