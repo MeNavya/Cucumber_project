@@ -78,7 +78,7 @@ public class StepDefinitions {
     @When("the user search the channel name")
     public void the_user_search_the_channel_name() {
 
-        WaitUtils.waitTillVisible(driver,hotstarPage.getSearchPage());
+       // WaitUtils.waitTillVisible(driver,hotstarPage.getSearchPage());
         WebElement element = hotstarPage.getSearchPage();
         data = TestDataReader.getData(scenario.getName());
         element.sendKeys(data.get("Search_Type"));
@@ -128,7 +128,7 @@ public class StepDefinitions {
     public void user_able_to_the_vedio(String search)  {
 
         WebElement Input=hotstarPage.getSearchvedio();
-        //WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
+        WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
         Input.sendKeys(search);
 
     }
