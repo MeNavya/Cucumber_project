@@ -128,7 +128,7 @@ public class StepDefinitions {
     public void user_able_to_the_vedio(String search)  {
 
         WebElement Input=hotstarPage.getSearchvedio();
-        WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
+        //WaitUtils.waitTillVisible(driver,hotstarPage.getDisplayHotstarPage());
         Input.sendKeys(search);
 
     }
